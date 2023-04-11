@@ -88,9 +88,9 @@ Oradan, VSCode'da yeni oluşturduğunuz cypress klasöründe, e2e klasörüne gi
 Gerekli öğelerinizi bitirdikten sonra çalışmanızı daha da ileri götürebilirsiniz. Bu hedefler, bu modülde öğrendiğiniz şeyler olabilir veya olmayabilir, ancak az önce incelediğiniz materyal üzerine inşa edilecekler. Zaman tanıyın, sınırlarınızı zorlayın ve aşağıdaki isteğe bağlı hedeflere ulaşıp ulaşamayacağınıza bakın:
 
 - [ ] Form öğesi bölümlerini iç içe routelara dönüştürün
-- [ ] Cypressle daha çok test yazın
-- [ ] Sipariş POST edilirken bir ağ hatası olasılığı için kullanıcı arabirimi oluşturun (örnek: İnternet'e bağlanılamadı)
-- [ ] Sipariş butonuna `Tebrikler! Siparişiniz Alındı!` mesajını gösterecek ve veritabanına eklenen siparişin detaylarını gösterecek bir işlevsellik ekleyin.
+- [x] Cypressle daha çok test yazın
+- [x] Sipariş POST edilirken bir ağ hatası olasılığı için kullanıcı arabirimi oluşturun (örnek: İnternet'e bağlanılamadı)
+- [x] Sipariş butonuna `Tebrikler! Siparişiniz Alındı!` mesajını gösterecek ve veritabanına eklenen siparişin detaylarını gösterecek bir işlevsellik ekleyin.
 - [x] Aşağıdaki görsellere göre sayfaları sırasıyla iyileştirin. Önceliklendirme çok önemli. İlk önce sipariş, sonra Sipariş Formu, en son da Anasayfadaki diğer yardımcı görselleri ekleyebilirsiniz.
 
 #### Esnek Tasarım İyileştirmeleri
