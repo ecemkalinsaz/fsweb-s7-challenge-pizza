@@ -22,9 +22,12 @@ export default function Pizza(props) {
   });
 
   function changeHandler(e) {
+    // Değişen inputun değerini alıyoruz
+    // value, type ve checked input html elementlerinin özellikleri
     let { value, type, checked } = e.target;
 
     if (type === "checkbox") {
+      // Checkbox ise malzeme seçildiği veya seçilmediği durumuna göre fiyatı güncelliyoruz
       value = checked;
       if (checked) {
         setMalzemeFiyati(malzemeFiyati + 5);
@@ -34,9 +37,11 @@ export default function Pizza(props) {
     }
 
     if (type === "radio") {
+      // Pizza boyutu seçildiğinde fiyatı güncelliyoruz
       setPizzaFiyati(boyutFiyat[value]);
     }
 
+    // Form verilerini güncelliyoruz
     const newFormData = {
       ...formData,
       [e.target.name]: value,
@@ -48,20 +53,27 @@ export default function Pizza(props) {
     e.preventDefault();
     console.log(formData);
     try {
-      const user = await userSchema.validate(formData);
+      // Form verilerini validate ediyoruz. userSchema yapısı ile kontrol ediyoruz
+      await userSchema.validate(formData);
     } catch (err) {
+      // Hata varsa hata mesajını güncelliyoruz
       setHataMesaji(err.message);
       return;
     }
+
+    // Hata yoksa hata mesajını temizliyoruz
     setHataMesaji("");
 
+    // Form verilerini POST ile gönderiyoruz
     axios
       .post("https://reqres.in/api/orders", formData)
       .then(function(response) {
+        // Sipariş başarılı bir şekilde oluşturulduğunda siparişleri güncelliyoruz
         props.addSiparis(response.data);
         window.location.href = "/success";
       })
       .catch(function(error) {
+        // Sipariş oluşturulurken hata oluştuğunda hata mesajını kullanıcıya gösteriyoruz
         if (error.message === "Network Error") {
           alert("İnternet bağlantınızı kontrol edin");
         }

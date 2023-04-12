@@ -19,7 +19,6 @@ describe("Pizza test, sprint 7 challenge", () => {
     cy.visit("http://localhost:3000/pizza");
     cy.get("#topping-pepperoni").check();
     cy.get("#topping-pepperoni").should("be.checked");
-
     cy.get("#topping-sausage").check();
     cy.get("#topping-sausage").should("be.checked");
     cy.get("#topping-dana-fume").check();
@@ -31,6 +30,7 @@ describe("Pizza test, sprint 7 challenge", () => {
     cy.get("#topping-black-olives").check();
     cy.get("#topping-black-olives").should("be.checked");
   });
+
   it("Form başarılı bir şekilde gönderilmeli.", () => {
     cy.visit("http://localhost:3000/pizza");
     cy.get("#small").check();
