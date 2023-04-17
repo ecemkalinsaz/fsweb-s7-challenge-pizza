@@ -159,102 +159,36 @@ export default function Pizza(props) {
 
           <h2>Ekstra Malzemeler</h2>
           <div className="row ikinci-row">
-            <div className="column">
-              <div>
-                <input
-                  type="checkbox"
-                  id="topping-pepperoni"
-                  name="malzeme1"
-                  value="pepperoni"
-                  onChange={changeHandler}
-                />
-                <label htmlFor="topping-pepperoni">Pepperoni</label>
+            {[
+              "Pepperoni",
+              "Sosis",
+              "Dana Füme",
+              "Mantar",
+              "Soğan",
+              "Yeşil Biber",
+              "Zeytin",
+              "Ananas",
+              "Ispanak",
+            ].map((malzeme, index) => (
+              <div key={index}>
+                <div className="column">
+                  <input
+                    type="checkbox"
+                    id={`topping-${malzeme.toLowerCase().replace(" ", "-")}`}
+                    name={`malzeme${index + 1}`}
+                    value={malzeme.toLowerCase().replace(" ", "-")}
+                    onChange={changeHandler}
+                  />
+                  <label
+                    htmlFor={`topping-${malzeme
+                      .toLowerCase()
+                      .replace(" ", "-")}`}
+                  >
+                    {malzeme}
+                  </label>
+                </div>
               </div>
-              <div>
-                <input
-                  type="checkbox"
-                  id="topping-sausage"
-                  name="malzeme2"
-                  value="sausage"
-                  onChange={changeHandler}
-                />
-                <label htmlFor="topping-sausage">Sosis</label>
-              </div>
-              <div>
-                <input
-                  type="checkbox"
-                  id="topping-dana-fume"
-                  name="malzeme3"
-                  value="dana-fume"
-                  onChange={changeHandler}
-                />
-                <label htmlFor="topping-dana-fume">Dana Füme</label>
-              </div>
-            </div>
-            <div className="column">
-              <div>
-                <input
-                  type="checkbox"
-                  id="topping-mushrooms"
-                  name="malzeme4"
-                  value="mushrooms"
-                  onChange={changeHandler}
-                />
-                <label htmlFor="topping-mushrooms">Mantar</label>
-              </div>
-              <div>
-                <input
-                  type="checkbox"
-                  id="topping-onions"
-                  name="malzeme5"
-                  value="onions"
-                  onChange={changeHandler}
-                />
-                <label htmlFor="topping-onions">Soğan</label>
-              </div>
-              <div>
-                <input
-                  type="checkbox"
-                  id="topping-green-peppers"
-                  name="malzeme6"
-                  value="green-peppers"
-                  onChange={changeHandler}
-                />
-                <label htmlFor="topping-green-peppers">Yeşil Biber</label>
-              </div>
-            </div>
-            <div className="column">
-              <div>
-                <input
-                  type="checkbox"
-                  id="topping-black-olives"
-                  name="malzeme7"
-                  value="black-olives"
-                  onChange={changeHandler}
-                />
-                <label htmlFor="topping-black-olives">Zeytin</label>
-              </div>
-              <div>
-                <input
-                  type="checkbox"
-                  id="topping-pineapple"
-                  name="malzeme8"
-                  value="pineapple"
-                  onChange={changeHandler}
-                />
-                <label htmlFor="topping-pineapple">Ananas</label>
-              </div>
-              <div>
-                <input
-                  type="checkbox"
-                  id="topping-spinach"
-                  name="malzeme9"
-                  value="spinach"
-                  onChange={changeHandler}
-                />
-                <label htmlFor="topping-spinach">Ispanak</label>
-              </div>
-            </div>
+            ))}
           </div>
 
           <label htmlFor="special-text" className="siparisNotu">
